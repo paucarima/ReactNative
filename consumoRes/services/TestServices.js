@@ -21,6 +21,7 @@ export const createDocTipoService = (post, fnExito) => {
     },
   };
 
+
   fetch("http://192.168.100.227:8080/inventarios-1.0.0/rest/tiposdocumento/crear", config)
     .then((response) => {
       return response.json();
@@ -28,7 +29,11 @@ export const createDocTipoService = (post, fnExito) => {
     .then((json) => {
       console.log(json);
       fnExito();
+    }).catch((error) => {
+      //console.error('Hubo un error!', error);
+     
     });
+
 };
 
 export const getAllPostsService = () => {
